@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body class="flex items-center justify-center h-screen bg-gray-800">
+    <div class="bg-gray-700 p-8 rounded-lg shadow-lg w-full max-w-md">
+      <h2 class="text-2xl font-bold text-center text-white mb-5">Sign Up</h2>
+      <form class="login-form" id="loginForm">
+        <div class="mb-2">
+          <input
+            type="text"
+            id="fullname"
+            placeholder="Fullname"
+            class="input input-bordered input-success w-full max-w-sm"
+          />
+        </div>
+
+        <div class="mb-2">
+          <input
+            type="eamil"
+            id="email"
+            placeholder="Email"
+            class="input input-bordered input-success w-full max-w-sm"
+          />
+        </div>
+
+        <div class="mb-2">
+          <input
+            type="text"
+            id="age"
+            placeholder="Age"
+            class="input input-bordered input-success w-full max-w-sm"
+          />
+        </div>
+
+        <div class="mb-2">
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            class="input input-bordered input-success w-full max-w-sm"
+          />
+        </div>
+
+        <div class="mb-4">
+          <select class="select select-success w-full max-w-sm" id="categories">
+            <option disabled selected>Pick your favorite categories</option>
+            <option>One Piece</option>
+            <option>Naruto</option>
+            <option>Death Note</option>
+            <option>Attack on Titan</option>
+            <option>Bleach</option>
+          </select>
+        </div>
+
+        <button class="btn btn-outline btn-success w-full" type="submit">
+          Sign Up
+        </button>
+      </form>
+
+      <p id="error" style="color: red; display: none">
+        Please fill all the fields
+      </p>
+
+      <div class="text-center mt-4">
+        <p class="text-sm text-white">
+          Have an account?
+          <a href="login.html" class="text-blue-500 hover:underline">Login</a>
+        </p>
+      </div>
+    </div>
+    <script>
+      const loginForm = document.getElementById("loginForm");
+
+const fullname = document.getElementById("fullname");
+const email = document.getElementById("email");
+const age = document.getElementById("age");
+const password = document.getElementById("password");
+const categories = document.getElementById("categories");
+
+loginForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const userData = {
+    fullname: fullname.value,
+    email: email.value,
+    age: age.value,
+    password: password.value,
+    category: categories.value,
+  };
+
+  if (userData) {
+    localStorage.setItem("userData", JSON.stringify(userData))
+  } else {
+    const error = document.getElementById("error");
+    error.style.display = "block";
+  }
+});
+    </script>
+  </body>
+</html>

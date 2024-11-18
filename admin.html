@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+    
+    <div class="flex items-center justify-center h-screen bg-gray-800 text-white" >
+       <div class="bg-gray-700 p-8 rounded-lg shadow-lg w-full max-w-sm">
+        <form id="add-book">
+        <div class="text-center">
+            <h1 class="uppercase text-2xl font-bold mb-2" >Add NEW BOOK</h1>
+        </div>
+        <div>
+            <label class="form-control w-full max-w-xs">
+                <div class="label">
+                  <span class="label-text text-green-500">Enter the title : </span>
+                </div>
+                <input type="text" id="title" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+              </label>
+        </div>
+        
+        <div>
+            <label class="form-control w-full max-w-xs">
+                <div class="label">
+                  <span class="label-text text-green-500">Enter the author name : </span>
+                </div>
+                <input type="text" id="author" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+              </label>
+        </div>
+        <div>
+            <label class="form-control w-full max-w-xs">
+                <div class="label">
+                  <span class="label-text text-green-500">Enter the category : </span>
+                </div>
+                <input type="text" id="category" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+              </label>
+        </div>
+        <div>
+            <label class="form-control w-full max-w-xs">
+                <div class="label">
+                  <span class="label-text text-green-500">Enete the year : </span>
+                </div>
+                <input type="text" id="year" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+              </label>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-outline btn-success w-24" >Add Book</button>
+        </div>
+    </form>   
+    </div>
+        
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

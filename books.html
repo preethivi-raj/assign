@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body  >
+    <nav >
+        <div class="navbar bg-base-200">
+            <div class="flex-1">
+              <a class="btn btn-ghost text-white text-xl">Stroy Book</a>
+            </div>
+              <div class="dropdown dropdown-end border rounded-full">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle ">
+                  <div class="w-10 ">
+                     <p id="profile" class="text-xl text-white text-center" ></p>                    
+                  </div>
+                </div>
+                <ul
+                  tabindex="0"
+                  class="menu menu-md dropdown-content text-white rounded-box z-[1] mt-3 w-52 p-2 shadow border-2 border-green-800">
+                  <li id="fullname" class="m-1" ></li>
+                  <li id="email" class="m-1"></li>
+                  <li id="category" class="m-1"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    </nav>
+
+    <div class="flex justify-center item-center " >
+        <div class="m-2">
+          <select class="select select-success w-full max-w-sm" id="selectedCategory">
+            <option disabled selected>Pick Your Favorite Categories</option>
+            <option>Funny</option>
+            <option>Sad</option>
+            <option>Death Note</option>
+            <option>Attack on Titan</option>
+            <option>Bleach</option>
+          </select>
+        </div>    
+    </div>
+
+
+    <div class="grid grid-cols-1 gap-4 m-4 md:grid-cols-3 md:gap-3"  id="bookContainer">
+      
+    </div>
+   
+
+
+    <script src="books.js" ></script>
+</body>
+</html>

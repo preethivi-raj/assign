@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body >
+  <div class="flex items-center justify-center h-screen bg-gray-800">
+  <div class="bg-gray-700 p-8 rounded-lg shadow-lg w-full max-w-sm">
+    <h2 class="text-2xl font-bold text-center text-white mb-6">Login</h2>
+    <form class="login-form" id="loginForm">
+
+      <div class="mb-4">
+        <input type="text" id="email" placeholder="Email" class="input input-bordered input-success w-full max-w-xs" />
+      </div>
+    
+      <div class="mb-6">
+        <input type="password" id="password" placeholder="Password" class="input input-bordered input-success w-full max-w-xs" />
+      </div>
+      
+     
+      <button class="btn btn-outline btn-success w-full" type="submit" >Login</button>
+    </form>
+
+    <p id="error" style="color: red; display: none;">Invalid Credentials</p>
+ 
+    <div class="text-center mt-4">
+      <p class="text-sm text-white">Don't have an account? 
+        <a href="signup.html" class="text-blue-500 hover:underline">Sign up</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+  <script>
+    const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", function(event) {
+    event.preventDefault(); 
+    const userData = JSON.parse (localStorage.getItem("userData"));
+
+  
+    const username = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (username === userData.email && password === userData.password) {
+        window.location.href = "index.html";
+    } else {
+       
+        const error = document.getElementById("error");
+        error.style.display = "block";
+    }
+});
+  </script>
+</body>
+</html>
